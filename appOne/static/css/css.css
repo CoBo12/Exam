@@ -1,0 +1,11 @@
+.Quotes {
+    border-width: 5px;
+    border-color: black;
+    padding: 5px;
+    border: black;
+
+}
+
+.Edit {
+    justify-content: right;
+}

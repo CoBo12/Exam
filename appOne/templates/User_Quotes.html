@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <a href='/quotes'>Back</a>
+    <form action='logout' method='post'>
+        {% csrf_token %}
+        <button type='submit' value='logout'>Logout</button>
+    </form>
+    <div class='col-6 my-5'>
+        <h1>{{ UserPage.first_name }} {{ UserPage.last_name }}'s Quotes</h1>
+        {% for x in Users_Quotes %}
+        <div class='quotes'>
+            <p> {{ x.Author }} : {{ x.Quote }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
